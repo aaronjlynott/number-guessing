@@ -1,0 +1,27 @@
+#prompts the user for a # and then gereates a # between 1 and that number
+#user guesses and is told either too small, too large or just right!
+import random
+
+while True:
+    try:
+        your_level = int(input('Level: '))
+        if your_level > 0:
+            break
+    except:
+        pass
+
+random_num = random.randint(1, your_level)
+
+while True:
+    try:
+        guess = int(input('Guess: '))
+        if guess > 0:
+            if guess < random_num:
+                print('Too small!')
+            elif guess > random_num:
+                print('Too large!')
+            else:
+                print('Just right!')
+                break
+    except:
+        pass
